@@ -1,0 +1,35 @@
+<h1>Portfolio</h1> <a href="/portfolio/add">New</a>
+
+<table>
+    <tr>
+        <td>Code</td>
+        <td>Name</td>
+        <td>Market Price</td>
+        <th>Buy Price</th>
+        <th>Shares</th>
+        <th>Total</th>
+        <th>Balance</th>
+        <th>Gain/Loss</th>
+        <th>(%)Gain/Loss</th>
+        <th>Action</th>
+    </tr>
+    {{#stocks}}
+    <tr id="{{stock_id}}">
+        <td>{{stock_code}}</td>
+        <td>{{stock_name}}</td>
+        <td>{{stock_price}}</td>
+        <td>{{price}}</td>
+        <td>{{shares}}</td>
+        <td>{{{numberFormat total}}}</td>
+        <td>{{{numberFormat balance}}}</td>
+        <td>{{{PercentChange loss}}}</td>
+        <td>{{{PercentChange gainPercent '%'}}}</td>
+        <td>
+        	<a href='/portfolio/edit/{{portfolio_id}}'>Edit</a>
+            <a href='/portfolio/delete/{{portfolio_id}}'>Delete</a>
+       	</td>
+    </tr>
+    {{/stocks}}
+</table>
+
+

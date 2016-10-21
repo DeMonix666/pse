@@ -1,0 +1,35 @@
+<h1>Watchlist</h1> <a href="/watchlist/add">New</a>
+
+<table>
+    <tr>
+        <td>Code</td>
+        <td>Name</td>
+        <td>Current</td>
+        <td>Previous</td>
+        <td>Change</td>
+        <td>Buy</td>
+        <td>Sell</td>
+        <td>Estimate</td>
+        <td>Trade</td>
+        <td>Action</td>
+    </tr>
+    {{#stocks}}
+    <tr id="{{stock_id}}">
+        <td>{{stock_code}}</td>
+        <td>{{stock_name}}</td>
+        <td>{{price}}</td>
+        <td>{{price}}</td>
+        <td>{{{PercentChange percent_change}}}</td>
+        <td>{{target_buy}}</td>
+        <td>{{target_sell}}</td>
+        <td>{{numberFormat estimate}}</td>
+        <td>{{as_of}}</td>
+        <td>
+        	<a href='/watchlist/edit/{{watchlist_id}}'>Edit</a>
+            <a href='/watchlist/delete/{{watchlist_id}}'>Delete</a>
+       	</td>
+    </tr>
+    {{/stocks}}
+</table>
+
+

@@ -1,0 +1,33 @@
+Portfolio Form 
+
+{{>errpartial}}
+
+<form id="portfolio-form" method="post">
+    {{#if portfolio_id}}
+        <input type="hidden" id="portfolio_id" name="portfolio_id" value="{{portfolio_id}}"  />
+    {{/if}}
+    
+	<table>
+    	<tr>
+        	<td>Stock</td>
+        	<td>
+            	<select id="stock_id" name="stock_id">
+                    <option value="">Select</option>
+                    {{#stocks}}
+                    	<option value='{{stock_id}}' {{{selected ../stock.stock_id stock_id}}}>{{stock_code}} - {{stock_name}}</option>
+                    {{/stocks}}
+                </select>
+            </td>
+        </tr>
+        <tr>
+        	<td>Price</td>
+            <td><input type="text" id="price" name="price" value="{{stock.price}}" /></td>
+        </tr>
+        <tr>
+        	<td>Shares</td>
+            <td><input type="text" id="shares" name="shares" value="{{stock.shares}}"  /></td>
+        </tr>
+    </table>
+    
+    <input type="submit" id="saveWatchlist" value="Save" />     
+</form>

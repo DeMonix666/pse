@@ -1,0 +1,32 @@
+Watchlist Form 
+
+{{>errpartial}}
+
+<form id="watchlist-form" method="post">
+    {{#if watchlist_id}}
+        <input type="hidden" id="watchlist_id" name="watchlist_id" value="{{watchlist_id}}"  />
+    {{/if}}
+	<table>
+    	<tr>
+        	<td>Stock</td>
+        	<td>
+            	<select id="stock_id" name="stock_id">
+                    <option value="">Select</option>
+                    {{#stocks}}
+                    	<option value='{{stock_id}}' {{{selected ../stock.stock_id stock_id}}}>{{stock_code}} - {{stock_name}}</option>
+                    {{/stocks}}
+                </select>
+            </td>
+        </tr>
+        <tr>
+        	<td>Target Buy</td>
+            <td><input type="text" id="target_buy" name="target_buy" value="{{stock.target_buy}}" /></td>
+        </tr>
+        <tr>
+        	<td>Target Sell</td>
+            <td><input type="text" id="target_sell" name="target_sell" value="{{stock.target_sell}}"  /></td>
+        </tr>
+    </table>
+    
+    <input type="submit" id="saveWatchlist" value="Save" />     
+</form>

@@ -1,0 +1,22 @@
+<h1>Stocks</h1>
+
+<table>
+    <tr>
+        <td>Code</td>
+        <td>Name</td>
+        <td>Price</td>
+        <td>Change</td>
+        <td>Previous Price</td>
+    </tr>
+    {{#stocks}}
+    <tr id="{{stock_id}}">
+        <td>{{stock_code}}</td>
+        <td>{{stock_name}}</td>
+        <td>{{numberFormat price}}</td>
+        <td>{{{PercentChange percent_change}}}</td>
+        <td>{{numberFormat previous_price}}</td>
+    </tr>
+    {{/stocks}}
+</table>
+
+
