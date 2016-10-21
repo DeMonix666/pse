@@ -29,9 +29,7 @@ exports.selected = function (val1, val2) {
 };
 
 exports.isEqual = function(val1) {
-	console.log('val1');
-	return true;
-	//return (val1 == val2)? true : false;
+	return (val1 == val2)? true : false;
 };
 
 exports.ifCond = function(v1, v2)

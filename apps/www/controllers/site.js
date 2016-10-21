@@ -1,8 +1,5 @@
 'use strict';
 
-const koa = require('koa.io');
-
-const app = koa();
 const dateFormat = require('dateformat');
 
 const StockModel = require('../../../models/stocks.js');
